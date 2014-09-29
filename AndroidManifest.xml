@@ -51,6 +51,10 @@
             android:enabled="true"
             android:process=".INFO_APP" >
         </service>
+        <service
+            android:name="MyTestService"
+            android:enabled="true" >
+        </service>
     </application>
 
 </manifest>

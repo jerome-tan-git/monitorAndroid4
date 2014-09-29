@@ -31,15 +31,16 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.activity_main);
-		mReceiver = new MyServiceReceiver(this);
-		filter = new IntentFilter(TestThread.NUM_COUNT_RECEIVER);
-		this.et = (TextView) findViewById(R.id.textView2);
-		registerReceiver(mReceiver, filter);
-		
-		Thread a = new Thread(new MQTTThread());
-		a.start();
-		
+//		setContentView(R.layout.activity_main);
+//		mReceiver = new MyServiceReceiver(this);
+//		filter = new IntentFilter(TestThread.NUM_COUNT_RECEIVER);
+//		this.et = (TextView) findViewById(R.id.textView2);
+//		registerReceiver(mReceiver, filter);
+//		
+//		Thread a = new Thread(new MQTTThread());
+//		a.start();
+		//System.out.println("aaaaaaaaaa");
+		startService(new Intent(this.getApplicationContext(), MyTestService.class));
 		
 	}
 	
