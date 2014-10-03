@@ -10,6 +10,19 @@ public class MyReceiver extends BroadcastReceiver{
 	public void onReceive(Context context, Intent intent) {
 		String msg = intent.getStringExtra("msg");
 		Log.i("Jerome","onclock...................... " + msg);
-
+//		PushService.actionStop(context);
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		PushService.actionStart(context);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

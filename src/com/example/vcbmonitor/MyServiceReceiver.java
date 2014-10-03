@@ -16,8 +16,8 @@ public class MyServiceReceiver extends BroadcastReceiver{
 		if (intent.getAction().equals(TestThread.NUM_COUNT_RECEIVER)) {
 			String title = intent.getStringExtra("title");
 			System.out.println("Receive: " + title);
-			this.parent.refreshText(title);
-
+			//this.parent.refreshText(title);
+			
 		}
 		
 	}

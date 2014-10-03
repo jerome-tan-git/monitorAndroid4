@@ -15,8 +15,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		//SystemStatus.startAlarm(context);
-		Log.i(PushService.TAG, "boot start");
-		System.out.println("Boot start...");
+//		Log.i(PushService.TAG, "boot start");
+//		System.out.println("Boot start...");
 		PushService.actionStart(context.getApplicationContext());
 		// context.startService(new Intent(context, PushService.class));
 		// // {

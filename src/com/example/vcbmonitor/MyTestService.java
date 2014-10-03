@@ -55,17 +55,17 @@ public class MyTestService  extends Service {
 	
 	@Override
 	public void onCreate() {
-		super.onCreate();
-
-		Thread a = new Thread(new MQTTThread());
-		a.start();
-		try {
-			a.join();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("finish connect ....");
+//		super.onCreate();
+//
+//		Thread a = new Thread(new MQTTThread());
+//		a.start();
+//		try {
+//			a.join();
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		System.out.println("finish connect ....");
 	}
 	
 	@Override

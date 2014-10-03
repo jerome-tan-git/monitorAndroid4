@@ -20,7 +20,7 @@ public class SystemStatus {
 		in.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
 		PendingIntent sender = PendingIntent.getBroadcast(_context, 0, in,
 				PendingIntent.FLAG_CANCEL_CURRENT);
-		int interval = 60*1000;
+		int interval = 60*5*1000;
 		long triggerAtTime = SystemClock.elapsedRealtime();
 		am.setRepeating(AlarmManager.RTC_WAKEUP, triggerAtTime, interval,
 				sender);

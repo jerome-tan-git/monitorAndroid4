@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		SystemStatus.startAlarm(getApplicationContext());
 //		setContentView(R.layout.activity_main);
 //		mReceiver = new MyServiceReceiver(this);
 //		filter = new IntentFilter(TestThread.NUM_COUNT_RECEIVER);
@@ -40,7 +40,8 @@ public class MainActivity extends Activity {
 //		Thread a = new Thread(new MQTTThread());
 //		a.start();
 		//System.out.println("aaaaaaaaaa");
-		startService(new Intent(this.getApplicationContext(), MyTestService.class));
+		//startService(new Intent(this.getApplicationContext(), MyTestService.class));
+		//PushService.actionStart(getApplicationContext());
 		
 	}
 	
@@ -58,7 +59,7 @@ public class MainActivity extends Activity {
 
 	@Override
 	public void onDestroy() {
-		unregisterReceiver(mReceiver);
+//		unregisterReceiver(mReceiver);
 		super.onDestroy();
 	}
 	public void refreshText(String _str)

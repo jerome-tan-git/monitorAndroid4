@@ -488,7 +488,19 @@ public class PushService extends Service {
 				String clientID = MQTT_CLIENT_ID + "/"
 						+ "SFIS89098asf";
 				log("Client: " + clientID);
-				mqttClient.connect(clientID, MQTT_CLEAN_START, MQTT_KEEP_ALIVE);
+				
+				
+				while(!mqttClient.isConnected())
+				{
+					Thread con = new Thread(new MQTTThread(mqttClient, MQTT_CLEAN_START, MQTT_KEEP_ALIVE, clientID));
+					con.start();
+					con.join();
+					if(!mqttClient.isConnected())
+					{
+						Thread.sleep(5000);
+					}
+				}
+				
 				log("After real connection...");
 				// register this client app has being able to receive messages
 				mqttClient.registerSimpleHandler(this);
@@ -580,6 +592,7 @@ public class PushService extends Service {
 				boolean retained) {
 			// Show a notification
 			String s = new String(payload);
+			log("message: " + s);
 			showNotification(s);
 		}
 
